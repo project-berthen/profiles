@@ -79,7 +79,11 @@ WSGI_APPLICATION = 'profiles_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'profile',
+        'USER': 'root',
+        'PASSWORD': 'P@ssw0rd',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
@@ -121,3 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+AUTH_USER_MODEL = 'profiles_api.UserProfile'
